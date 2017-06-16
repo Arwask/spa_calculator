@@ -6,7 +6,6 @@ let multiplyBtn = document.getElementById('multiply');
 
 addBtn.addEventListener("click", function()
 {
-	console.log(event);
 	var num1 = parseInt(document.getElementById('number1').value);
 	var num2 = parseInt(document.getElementById('number2').value);
 	calculate(addition,num1, num2);
@@ -14,14 +13,12 @@ addBtn.addEventListener("click", function()
 
 subBtn.addEventListener("click", function()
 {
-	console.log(event);
 	var num1 = parseInt(document.getElementById('number1').value);
 	var num2 = parseInt(document.getElementById('number2').value);
 	calculate(subtraction,num1, num2);
 });
 divBtn.addEventListener("click", function()
 {
-	console.log(event);
 	var num1 = parseInt(document.getElementById('number1').value);
 	var num2 = parseInt(document.getElementById('number2').value);
 	calculate(division,num1, num2);
@@ -29,51 +26,41 @@ divBtn.addEventListener("click", function()
 
 multiplyBtn.addEventListener("click", function()
 {
-	console.log(event);
 	var num1 = parseInt(document.getElementById('number1').value);
 	var num2 = parseInt(document.getElementById('number2').value);
 	calculate(multiply,num1, num2);
 });
-/*
-  Create a function that multiplies two numbers
-  passed in as arguments. Return the product.
- */
+
 function multiply(num1, num2)
 {
-	console.log(num1*num2);
-
+	answer = num1*num2;
+	printAnswer(answer);
 }
 
-/*
-  Create a function that adds two numbers
-  passed in as arguments. Return the sum.
- */
 function addition(num1, num2)
 {
 	answer = num1 + num2;
-	console.log(answer);
+	printAnswer(answer);
 }
 
-/*
-  Create a function that subtracts two numbers
-  passed in as arguments. Return the difference.
- */
 function subtraction(num1, num2)
 {
 	answer = num1 - num2;
-	console.log(answer);
+	printAnswer(answer);
 }
 
-/*
-  Create a function that divides two numbers
-  passed in as arguments. Return the quotient.
- */
 function division(num1, num2)
 {
-	console.log(num1 / num2);
+	answer = (num1 / num2);
+	printAnswer(answer);
 }
 
  function calculate(function1, num1, num2)
 {
-	function1(num1,num2);
+	function1(num1,num2)
+}
+
+function printAnswer(value)
+{
+	 document.getElementById('answer').value = value;
 }
